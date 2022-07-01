@@ -1,0 +1,4 @@
+num_nodes=1200, feat_dim=500, nb_class=3, 
+expected_hr=0.6, expected_avgdeg=20, P_e=0.6, P_i=0.6, scale=0.05, 
+prob_link_exp=0.03, prob_link_imp=0.03, 
+avg_deg=20.046666666666667, hom_ratio=0.5958596607914866, is_connected=True
