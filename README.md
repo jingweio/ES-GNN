@@ -1,5 +1,4 @@
-# ES-GNN ([e-print draft](chrome-extension://oemmndcbldboiebfnladdacbdfmadadm/https://arxiv.org/pdf/2205.13700.pdf))
-pre-print draft
+# ES-GNN
 Source codes for "ES-GNN: Generalizing Graph Neural Networks Beyond Homophily with Edge Splitting".
 
 ## Citation
