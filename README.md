@@ -12,7 +12,7 @@ Figure 1: Illustration of our ES-GNN framework where $\mathbf{A}$ and $\mathbf{X
 </p>
 
 <p align = "center">
-<img src="https://github.com/jingweio/ES-GNN/blob/main/toy_example.png" width="800">
+<img src="https://github.com/jingweio/ES-GNN/blob/main/toy_example.png" width="500">
 </p>
 <p align = "left">
 Figure 2: A toy example to show differences between conventional GNNs and our ES-GNN in aggregating node features. Conventional GNNs with local smoothness tend to produce non-discriminative representations on heterophilic graphs, while our ES-GNN is able to disentangle and exclude the task-harmful features from the final predictive target.
@@ -29,10 +29,10 @@ Table 1: Statistics of real-world datasets, where $\mathcal{H}$ and $\hat{\mathc
 
 ## Synthetic Datasets
 <p align = "center">
-<img src = "https://github.com/jingweio/ES-GNN/blob/main/syn_datasets.png"  width="800">
+<img src = "https://github.com/jingweio/ES-GNN/blob/main/syn_datasets.png">
 </p>
 <p align = "left">
-Figure 3: 
+Figure 3: Constructing synthetic graphs with arbitrary levels of homophily and heterophily. Shape and color of nodes respectively illustrate the explicit and implicit node attributes. Nodes with the same shape or color are connected with a probability of $P_E$ or $P_I$, independently, while they are only classified by their shapes (the explicit attributes) into three categories. Obviously, we can observe heterophilic graph pattern given $P_E \ll P_I$, and strong homophily otherwise.
 </p>
 
 ## Citation
