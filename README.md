@@ -6,10 +6,17 @@ While Graph Neural Networks (GNNs) have achieved enormous success in multiple gr
 
 ## Pipeline
 <p align = "center">
-<img src=""/>
+<img src="https://github.com/jingweio/ES-GNN/blob/main/esgnn_pipline.png"/>
 </p>
 <p align = "left">
-Figure 1: 
+Figure 1: Illustration of our ES-GNN framework where A and X denote the adjacency matrix and feature matrix of nodes, respectively. First, X is projected onto different latent subspaces via different channels R and IR. An edge splitting is then performed to divide the original graph edges into two exclusive sets. After that, the node information can be aggregated individually and separately on different edge sets to produce disentangled representations, which are further utilized to make an more accurate edge splitting in the next layer. The task-relevant representation \mathbf{Z}_R^' is reasonably granted for prediction. Meanwhile, an Irrelevant Consistency Regularization (ICR) is developed to further reduce the potential task-harmful information from the final predictive target.
+</p>
+
+<p align = "center">
+<img src="https://github.com/jingweio/ES-GNN/blob/main/toy_example.png" width="600">
+</p>
+<p align = "left">
+Figure 2: A toy example to show differences between conventional GNNs and our ES-GNN in aggregating node features. Conventional GNNs with local smoothness tend to produce non-discriminative representations on heterophilic graphs, while our ES-GNN is able to disentangle and exclude the task-harmful features from the final predictive target.
 </p>
 
 
