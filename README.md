@@ -11,14 +11,6 @@ While Graph Neural Networks (GNNs) have achieved enormous success in multiple gr
 Figure 1: Illustration of our ES-GNN framework where $\mathbf{A}$ and $\mathbf{X}$ denote the adjacency matrix and feature matrix of nodes, respectively. First, $\mathbf{X}$ is projected onto different latent subspaces via different channels \textit{R} and \textit{IR}. An edge splitting is then performed to divide the original graph edges into two exclusive sets. After that, the node information can be aggregated individually and separately on different edge sets to produce disentangled representations, which are further utilized to make an more accurate edge splitting in the next layer. The task-relevant representation $\mathbf{Z}_R^{'}$ is reasonably granted for prediction. Meanwhile, an Irrelevant Consistency Regularization (ICR) is developed to further reduce the potential task-harmful information from the final predictive target.
 </p>
 
-<p align = "center">
-<img src="https://github.com/jingweio/ES-GNN/blob/main/toy_example.png" width="500">
-</p>
-<p align = "left">
-Figure 2: A toy example to show differences between conventional GNNs and our ES-GNN in aggregating node features. Conventional GNNs with local smoothness tend to produce non-discriminative representations on heterophilic graphs, while our ES-GNN is able to disentangle and exclude the task-harmful features from the final predictive target.
-</p>
-
-
 ## Real Datasets
 <p align = "center">
 <img src = "https://github.com/jingweio/ES-GNN/blob/main/real_datasets.png">
@@ -33,6 +25,22 @@ Table 1: Statistics of real-world datasets, where $\mathcal{H}$ and $\hat{\mathc
 </p>
 <p align = "left">
 Figure 3: Constructing synthetic graphs with arbitrary levels of homophily and heterophily. Shape and color of nodes respectively illustrate the explicit and implicit node attributes. Nodes with the same shape or color are connected with a probability of $P_E$ or $P_I$, independently, while they are only classified by their shapes (the explicit attributes) into three categories. Obviously, we can observe heterophilic graph pattern given $P_E \ll P_I$, and strong homophily otherwise.
+</p>
+
+## Correlation Analysis
+<p align = "center">
+<img src = "https://github.com/jingweio/ES-GNN/blob/main/analysis_correlation.png">
+</p>
+<p align = "left">
+Figure 4: Feature correlation analysis. Two distinct patterns (task-relevant and task-irrelevant topologies) can be learned on Chameleon with \mathcal{H} = 0.23, while almost all information is retained in the task-relevant channel (0-31) on Cora with \mathcal{H} = 0.81. On synthetic graphs in (c), (d), and (e), block- wise pattern in the task-irrelevant channel (32-63) is gradually attenuated with the incremental homophily ratios across 0.1, 0.5, and 0.9. ES-GNN presents one general framework which can be adaptive for both heterophilic and homophilic graphs.
+</p>
+
+## Robustness Analysis
+<p align = "center">
+<img src = "https://github.com/jingweio/ES-GNN/blob/main/analysis_robust.png">
+</p>
+<p align = "left">
+Figure 5:  Results of different models on perturbed homophilic graphs. ES-GNN is able to identify the falsely injected (the task-irrelevant) graph edges, and exclude these connections from the final predictive learning, thereby displaying relative robust performance against adversarial edge attacks.
 </p>
 
 ## Citation
