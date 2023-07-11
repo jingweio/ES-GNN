@@ -33,7 +33,7 @@ Figure 3: Constructing synthetic graphs with arbitrary levels of homophily and h
 <img src = "https://github.com/jingweio/ES-GNN/blob/main/analysis_correlation.png">
 </p>
 <p align = "left">
-Figure 4: Feature correlation analysis. Two distinct patterns (task-relevant and task-irrelevant topologies) can be learned on Chameleon with \mathcal{H} = 0.23, while almost all information is retained in the task-relevant channel (0-31) on Cora with \mathcal{H} = 0.81. On synthetic graphs in (c), (d), and (e), block- wise pattern in the task-irrelevant channel (32-63) is gradually attenuated with the incremental homophily ratios across 0.1, 0.5, and 0.9. ES-GNN presents one general framework which can be adaptive for both heterophilic and homophilic graphs.
+Figure 4: Feature correlation analysis. Two distinct patterns (task-relevant and task-irrelevant topologies) can be learned on Chameleon with $\mathcal{H}$ = 0.23, while almost all information is retained in the task-relevant channel (0-31) on Cora with $\mathcal{H}$ = 0.81. On synthetic graphs in (c), (d), and (e), block- wise pattern in the task-irrelevant channel (32-63) is gradually attenuated with the incremental homophily ratios across 0.1, 0.5, and 0.9. ES-GNN presents one general framework which can be adaptive for both heterophilic and homophilic graphs.
 </p>
 
 ## Robustness Analysis
