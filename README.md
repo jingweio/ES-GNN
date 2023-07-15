@@ -4,20 +4,20 @@
 While Graph Neural Networks (GNNs) have achieved enormous success in multiple graph analytical tasks, modern variants mostly rely on the strong inductive bias of homophily. However, real-world networks typically exhibit both homophilic and heterophilic linking patterns, wherein adjacent nodes may share dissimilar attributes and distinct labels. Therefore, GNNs smoothing node proximity holistically may aggregate both task-relevant and irrelevant (even harmful) information, limiting their ability to generalize to heterophilic graphs and potentially causing non-robustness. In this work, we propose a novel edge splitting GNN (ES-GNN) framework to adaptively distinguish between graph edges either relevant or irrelevant to learning tasks. This essentially transfers the original graph into two subgraphs with the same node set but exclusive edge sets dynamically. Given that, information propagation separately on these subgraphs and edge splitting are alternatively conducted, thus disentangling the task-relevant and irrelevant features. Theoretically, we show that our ES-GNN can be regarded as a solution to a disentangled graph denoising problem, which further illustrates our motivations and interprets the improved generalization beyond homophily. Extensive experiments over 11 benchmark and 1 synthetic datasets demonstrate that ES-GNN not only outperforms the state-of-the-arts, but also can be more robust to adversarial graphs and alleviate the over-smoothing problem.
 
 ## Datasets
-### Real-world Graphs
-<p align = "center">
-<img src = "https://github.com/jingweio/ES-GNN/blob/main/real_datasets.png">
-</p>
-<p align = "left">
-Table 1: Statistics of real-world datasets, where $\mathcal{H}$ and $\hat{\mathcal{H}}$ (considering class-imbalance problem) provide indexes of graph homophily ratio. It can be observed that, despite the relative high homophily level measured by $\mathcal{H}$ = 0.632, the Twitch-DE dataset with class-imbalance problem is essentially a heterophilic graph as suggested by $\hat{\mathcal{H}}$ = 0.139. For Polblogs dataset, since node features are not provided, we directly use the rows of the adjacency matrix.
-</p>
-
 ### Synthetic Graphs
 <p align = "center">
 <img src = "https://github.com/jingweio/ES-GNN/blob/main/syn_datasets.png">
 </p>
 <p align = "left">
 Figure 3: Constructing synthetic graphs with arbitrary levels of homophily and heterophily. Shape and color of nodes respectively illustrate the explicit and implicit node attributes. Nodes with the same shape or color are connected with a probability of $P_E$ or $P_I$, independently, while they are only classified by their shapes (the explicit attributes) into three categories. Obviously, we can observe heterophilic graph pattern given $P_E \ll P_I$, and strong homophily otherwise.
+</p>
+
+### Real-world Graphs
+<p align = "center">
+<img src = "https://github.com/jingweio/ES-GNN/blob/main/real_datasets.png">
+</p>
+<p align = "left">
+Table 1: Statistics of real-world datasets, where $\mathcal{H}$ and $\hat{\mathcal{H}}$ (considering class-imbalance problem) provide indexes of graph homophily ratio. It can be observed that, despite the relative high homophily level measured by $\mathcal{H}$ = 0.632, the Twitch-DE dataset with class-imbalance problem is essentially a heterophilic graph as suggested by $\hat{\mathcal{H}}$ = 0.139. For Polblogs dataset, since node features are not provided, we directly use the rows of the adjacency matrix.
 </p>
 
 ## Pipeline
