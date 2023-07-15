@@ -3,14 +3,6 @@
 ## Abstract
 While Graph Neural Networks (GNNs) have achieved enormous success in multiple graph analytical tasks, modern variants mostly rely on the strong inductive bias of homophily. However, real-world networks typically exhibit both homophilic and heterophilic linking patterns, wherein adjacent nodes may share dissimilar attributes and distinct labels. Therefore, GNNs smoothing node proximity holistically may aggregate both task-relevant and irrelevant (even harmful) information, limiting their ability to generalize to heterophilic graphs and potentially causing non-robustness. In this work, we propose a novel edge splitting GNN (ES-GNN) framework to adaptively distinguish between graph edges either relevant or irrelevant to learning tasks. This essentially transfers the original graph into two subgraphs with the same node set but exclusive edge sets dynamically. Given that, information propagation separately on these subgraphs and edge splitting are alternatively conducted, thus disentangling the task-relevant and irrelevant features. Theoretically, we show that our ES-GNN can be regarded as a solution to a disentangled graph denoising problem, which further illustrates our motivations and interprets the improved generalization beyond homophily. Extensive experiments over 11 benchmark and 1 synthetic datasets demonstrate that ES-GNN not only outperforms the state-of-the-arts, but also can be more robust to adversarial graphs and alleviate the over-smoothing problem.
 
-## Pipeline
-<p align = "center">
-<img src="https://github.com/jingweio/ES-GNN/blob/main/esgnn_pipline.png"/>
-</p>
-<p align = "left">
-Figure 1: Illustration of our ES-GNN framework where $\mathbf{A}$ and $\mathbf{X}$ denote the adjacency matrix and feature matrix of nodes, respectively. First, $\mathbf{X}$ is projected onto different latent subspaces via different channels $\textit{R}$ and $\textit{IR}$. An edge splitting is then performed to divide the original graph edges into two exclusive sets. After that, the node information can be aggregated individually and separately on different edge sets to produce disentangled representations, which are further utilized to make an more accurate edge splitting in the next layer. The task-relevant representation $\mathbf{Z}_R^{'}$ is reasonably granted for prediction. Meanwhile, an Irrelevant Consistency Regularization (ICR) is developed to further reduce the potential task-harmful information from the final predictive target.
-</p>
-
 ## Datasets
 ### Real-world Graphs
 <p align = "center">
@@ -26,6 +18,14 @@ Table 1: Statistics of real-world datasets, where $\mathcal{H}$ and $\hat{\mathc
 </p>
 <p align = "left">
 Figure 3: Constructing synthetic graphs with arbitrary levels of homophily and heterophily. Shape and color of nodes respectively illustrate the explicit and implicit node attributes. Nodes with the same shape or color are connected with a probability of $P_E$ or $P_I$, independently, while they are only classified by their shapes (the explicit attributes) into three categories. Obviously, we can observe heterophilic graph pattern given $P_E \ll P_I$, and strong homophily otherwise.
+</p>
+
+## Pipeline
+<p align = "center">
+<img src="https://github.com/jingweio/ES-GNN/blob/main/esgnn_pipline.png"/>
+</p>
+<p align = "left">
+Figure 1: Illustration of our ES-GNN framework where $\mathbf{A}$ and $\mathbf{X}$ denote the adjacency matrix and feature matrix of nodes, respectively. First, $\mathbf{X}$ is projected onto different latent subspaces via different channels $\textit{R}$ and $\textit{IR}$. An edge splitting is then performed to divide the original graph edges into two exclusive sets. After that, the node information can be aggregated individually and separately on different edge sets to produce disentangled representations, which are further utilized to make an more accurate edge splitting in the next layer. The task-relevant representation $\mathbf{Z}_R^{'}$ is reasonably granted for prediction. Meanwhile, an Irrelevant Consistency Regularization (ICR) is developed to further reduce the potential task-harmful information from the final predictive target.
 </p>
 
 ## Correlation Analysis
