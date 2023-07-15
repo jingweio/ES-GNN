@@ -8,7 +8,7 @@ Two nodes get connected in a graph mainly due to their similarity in some featur
 
 
 
-## Synthetic Datasets
+## Synthetic Graphs
 <p align = "center">
 <img src = "https://github.com/jingweio/ES-GNN/blob/main/syn_datasets.png">
 </p>
@@ -16,7 +16,7 @@ Two nodes get connected in a graph mainly due to their similarity in some featur
 Figure 3: Constructing synthetic graphs with arbitrary levels of homophily and heterophily. Shape and color of nodes respectively illustrate the explicit and implicit node attributes. Nodes with the same shape or color are connected with a probability of $P_E$ or $P_I$, independently, while they are only classified by their shapes (the explicit attributes) into three categories. Obviously, we can observe heterophilic graph pattern given $P_E \ll P_I$, and strong homophily otherwise.
 </p>
 
-## Real-world Datasets
+## Real-world Graphs
 <p align = "center">
 <img src = "https://github.com/jingweio/ES-GNN/blob/main/real_datasets.png">
 </p>
