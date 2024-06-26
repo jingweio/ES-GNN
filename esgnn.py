@@ -83,8 +83,8 @@ class ESGNN(nn.Module):
         re_raw, ir_raw = re_h, ir_h
         for layer in self.layers:
             re_h, ir_h = layer(re_h, ir_h, self.iter_lowpass)
-            re_h = self.re_eps * re_raw + re_h
-            ir_h = self.ir_eps * ir_raw + ir_h
+            re_h = self.re_eps * re_raw + (1 - self.re_eps) * re_h
+            ir_h = self.ir_eps * ir_raw + (1 - self.ir_eps) * ir_h
         re_z, ir_z = re_h, ir_h
         re_logits = self.cla(re_h)
         ir_logits = self.cla(ir_h)
